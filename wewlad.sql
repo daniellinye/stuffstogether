@@ -54,15 +54,15 @@ CREATE TABLE ASSIGNMENTS
 
 
 INSERT INTO ASSIGNMENTS
-VALUES (‘Final Maymay assignment’, 34, 2016, ‘summative’);
+VALUES ('Final Maymay assignment', 34, 2016, 'summative');
 
 
 INSERT INTO COURSES
-VALUES (‘maymayCourse’, ‘Learn 2 meme’, 6);
+VALUES ('maymayCourse', 'Learn 2 meme', 6);
 
 
 INSERT INTO STUDENTS
-VALUES (‘589761961’, 2016, ‘John’, ‘Smith’);
+VALUES ('589761961', 2016, 'John', 'Smith');
 
 
 -- get student 👌
