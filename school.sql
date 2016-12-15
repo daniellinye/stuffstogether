@@ -68,6 +68,7 @@ VALUES (‘589761961’, 2016, ‘John’, ‘Smith’);
 -- get student 👌
 SELECT * FROM STUDENTS WHERE ID = 1337
 
+UPDATE COURSES, ASSIGNMENTS, STUDENTS;
 
 
 
