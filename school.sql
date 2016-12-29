@@ -4,7 +4,7 @@ CREATE DATABASE school;
 CREATE TABLE STUDENTS
 (
 	ID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	BSN int(11),
+	BSN int(9),
 	Enrollment_Year int(4),
 	Name varchar(255),
 	Surname varchar(255)
@@ -15,9 +15,9 @@ CREATE TABLE STUDENTS
 
 CREATE TABLE TEACHERS
 (
-	BSN int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	BSN int(9) NOT NULL PRIMARY KEY,
 	Salary float(11),
-	Scale float(11),
+	Scale float(4),
 	Name varchar(255)
 );
 
@@ -27,7 +27,7 @@ CREATE TABLE TEACHERS
 CREATE TABLE COURSES
 (
 	CODE varchar(255) NOT NULL PRIMARY KEY,
-	Owner int,
+	Owner int(9),
 	Name varchar(255),
 	STID int(11),
 	StudyPoints int(2),
@@ -41,7 +41,7 @@ CREATE TABLE COURSES
 CREATE TABLE ASSIGNMENTS
 (
 	CODE varchar(255) NOT NULL PRIMARY KEY,
-	Owner int,
+	Owner int(9),
 	Week int(2),
 	Year int(4),
 	AssesmentType int(1),
