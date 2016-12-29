@@ -18,8 +18,7 @@ SELECT * FROM COURSES, STUDENTS ORDER BY STUDENTS.Enrollment_Year DESC
 WHERE COURSES.STID = STUDENTS.ID;
 
 -- opdracht 5 TODO IM SO DONE W THIS SHEIT  
- -- Give a list of teachers that are teaching less than two classes or teachers that are
-teaching more than average.
+ -- Give a list of teachers that are teaching less than two classes or teachers that are teaching more than average.
 SELECT AVG(COUNT(COURSES.Owner = TEACHERS.BSN)),  FROM COURSES, TEACHERS WHERE 
 
 -- opdracht 6
