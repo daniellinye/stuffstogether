@@ -1,6 +1,8 @@
 CREATE DATABASE school;
 
 
+
+
 CREATE TABLE STUDENTS
 (
 	ID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -57,20 +59,17 @@ CREATE TABLE ASSIGNMENTS
 
 
 INSERT INTO ASSIGNMENTS
-VALUES ('Final Maymay assignment', 34, 2016, 'summative');
+VALUES ('Final Maymay assignment', 123456782, 34, 2016, 1, 123, false);
 
 
 INSERT INTO COURSES
-VALUES ('maymayCourse', 'Learn 2 meme', 6);
+VALUES ('maymayCourse', 9212121, 'Learn 2 meme', 12312321, 6);
+
+
 
 
 INSERT INTO STUDENTS
-VALUES ('589761961', 2016, 'John', 'Smith');
+VALUES ('589761961', 123456782, 2016, 'John', 'Smith');
 
 
 SELECT * FROM STUDENTS WHERE ID = 1337
-
-UPDATE COURSES, ASSIGNMENTS, STUDENTS;
-
-
-
