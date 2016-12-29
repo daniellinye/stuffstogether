@@ -10,7 +10,7 @@ CREATE TABLE STUDENTS
 	Enrollment_Year int(4),
 	Name varchar(255),
 	Surname varchar(255),
-	Teachers int
+	Teachers int(9)
 );
 
 
