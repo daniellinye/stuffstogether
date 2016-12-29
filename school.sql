@@ -10,7 +10,8 @@ CREATE TABLE STUDENTS
 	Enrollment_Year int(4),
 	Name varchar(255),
 	Surname varchar(255),
-	Teachers int(9)
+	Teachers int(9),
+	FOREIGN KEY (STID) REFERENCES COURSES(ID)
 );
 
 
@@ -34,8 +35,7 @@ CREATE TABLE COURSES
 	Name varchar(255),
 	STID int(11),
 	StudyPoints int(2),
-	FOREIGN KEY (Owner) REFERENCES TEACHERS(BSN),
-	FOREIGN KEY (STID) REFERENCES STUDENTS(ID)
+	FOREIGN KEY (Owner) REFERENCES TEACHERS(BSN)
 );
 
 
@@ -56,7 +56,7 @@ CREATE TABLE ASSIGNMENTS
 );
 
 
-
+--Insert Statements
 
 INSERT INTO ASSIGNMENTS
 VALUES ('Final Maymay assignment', 123456782, 34, 2016, 1, 123, false);
