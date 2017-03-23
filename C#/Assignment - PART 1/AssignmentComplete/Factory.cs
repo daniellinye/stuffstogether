@@ -55,6 +55,10 @@ namespace AssignmentComplete
 
     }
 
+    public Texture2D OreBox()
+    {
+        return this.oreBox;
+    }
 
     public ITruck GetReadyTruck()
     {
