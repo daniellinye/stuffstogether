@@ -22,7 +22,7 @@ namespace AssignmentComplete
             }
             Ore CreateOreBox(Vector2 position)
             {
-                var box = new Ore(100, mine.oreBox);
+                var box = new Ore(100, mine.OreBox());
                 box.Position = position;
                 return box;
             }
