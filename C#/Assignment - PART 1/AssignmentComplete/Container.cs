@@ -13,14 +13,22 @@ namespace AssignmentComplete
     Texture2D texture;
     Vector2 position = Vector2.One * -100;
     int currentAmount;
+        private int v;
+        private Func<Texture2D> productBox;
 
-    public Ore(int amount, Texture2D texture)
+        public Ore(int amount, Texture2D texture)
     {
       this.texture = texture;
       AddContent(amount);
     }
 
-    public void Draw(SpriteBatch spriteBatch)
+        public Ore(int v, Func<Texture2D> productBox)
+        {
+            this.v = v;
+            this.productBox = productBox;
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
     {
       spriteBatch.Draw(texture, Position, Color.White);
     }

@@ -26,6 +26,9 @@ namespace AssignmentComplete
               /*
                * TODO: Initialize a new truck here I think 
                * ye probably
+               * 
+               * I think so too.....
+               * ye
                */
           }
       }
@@ -109,5 +112,112 @@ namespace AssignmentComplete
     }
     
   }
+
+    class Ikea : IFactory
+    {
+
+        class AddOreBoxToMine : IAction
+        {
+            Ikea ikea;
+            public void CreateProduct(Ikea ikea)
+            {
+                this.ikea = ikea;
+            }
+            public void Run()
+            {
+                ikea.ProductsToShip.Add(CreateOreBox(ikea.Position + new Vector2(-80, 40 + -30 * ikea.ProductsToShip.Count)));
+                if (ikea.productsToShip.Count == 4)
+                {
+                    ikea.productsToShip = ikea.productsToShip.GetRange(0, ikea.productsToShip.Count - 4); 
+                    //Not setting this to zero because math is cool.
+                    /*
+                    * TODO: Initialize a new truck here I think 
+                    * ye probably
+                    * 
+                    * And second truck here :P
+                    */
+                }
+            }
+
+
+            //TODO: Make a product class
+            Ore CreateOreBox(Vector2 position)
+            {
+                var box = new Ore(100, ikea.productBox);
+                box.Position = position;
+                return box;
+            }
+        }
+
+        Texture2D ikea, product_box, product_container, truckTexture;
+        List<IStateMachine> processes;
+        ITruck waitingTruck;
+        bool isTruckReady = false;
+        Vector2 position;
+        List<IContainer> productsToShip;
+
+        public Ikea(Vector2 position, Texture2D truck_texture, Texture2D ikea, Texture2D product_box, Texture2D product_container)
+        {
+            processes = new List<IStateMachine>();
+            ProductsToShip = new List<IContainer>();
+            this.ikea = ikea;
+            this.truckTexture = truck_texture;
+            this.product_box = product_box;
+            this.product_container = product_container;
+            this.position = position;
+
+
+            processes.Add(new Timer(1.0f));
+
+            processes.Add(new Timer(1.0f));
+
+        }
+
+        public Texture2D productBox()
+        {
+            return this.product_box;
+        }
+
+        public ITruck GetReadyTruck()
+        {
+            //not implemented yet
+            return null;
+        }
+
+        public Vector2 Position
+        {
+            get
+            {
+                return position;
+            }
+        }
+        public List<IContainer> ProductsToShip
+        {
+            get
+            {
+                return productsToShip;
+            }
+            set
+            {
+                productsToShip = value;
+            }
+        }
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            foreach (var cart in ProductsToShip)
+            {
+                cart.Draw(spriteBatch);
+            }
+            spriteBatch.Draw(ikea, Position, Color.White);
+        }
+        public void Update(float dt)
+        {
+            foreach (var process in processes)
+            {
+                process.Update(dt);
+            }
+        }
+
+    }
 
 }
