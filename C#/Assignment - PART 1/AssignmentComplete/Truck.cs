@@ -37,15 +37,9 @@ namespace AssignmentComplete
             position += Velocity;
         }
 
-        public void AddContainer(IContainer container)
-        {
+        public void AddContainer(IContainer container) {}
 
-        }
-
-        public void StartEngine()
-        {
-
-        }
+        public void StartEngine(){}
 
 
     }
@@ -80,14 +74,8 @@ namespace AssignmentComplete
             position += Velocity;
         }
 
-        public void AddContainer(IContainer container)
-        {
+        public void AddContainer(IContainer container){}
 
-        }
-
-        public void StartEngine()
-        {
-
-        }
+        public void StartEngine(){ }
     }
 }

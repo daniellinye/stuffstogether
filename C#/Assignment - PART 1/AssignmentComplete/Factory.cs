@@ -37,7 +37,6 @@ namespace AssignmentComplete
         Texture2D mine, oreContainer, oreBox, truckTexture;
         List<IStateMachine> processes;
         ITruck waitingTruck;
-        OreContainer OreContainer;
         bool isTruckReady = false;
         Vector2 position;
         List<IContainer> productsToShip;
@@ -101,14 +100,10 @@ namespace AssignmentComplete
         public void Draw(SpriteBatch spriteBatch)
         {
             foreach (var cart in ProductsToShip)
-            {
                 cart.Draw(spriteBatch);
-            }
 
-            if (productsToShip.Count() != 3)
-            {
                 waitingTruck.Draw(spriteBatch);
-            }
+            
             spriteBatch.Draw(mine, Position, Color.White);
         }
         public void Update(float dt)
