@@ -60,6 +60,7 @@ namespace AssignmentComplete
       this.oreContainer = ore_container;
       this.oreBox = ore_box;
       this.position = position;
+      waitingTruck = new Truck(truckTexture, null, position + new Vector2(64, 32), new Vector2(0, 0));
 
 
       processes.Add(
@@ -79,7 +80,7 @@ namespace AssignmentComplete
     {
         if (isTruckReady)
         {
-            return new Truck(truckTexture, null, position, new Vector2(2, 0));
+            return new Truck(truckTexture, null, position + new Vector2(64,32), new Vector2(2, 0));
         }
         return null;
     }
@@ -108,7 +109,11 @@ namespace AssignmentComplete
       {
         cart.Draw(spriteBatch);
       }
-      spriteBatch.Draw(mine, Position, Color.White);
+        
+        if(productsToShip.Count() != 3){
+            waitingTruck.Draw(spriteBatch);
+        }
+      spriteBatch.Draw(mine, Position, Color.Magenta);
     }
     public void Update(float dt)
     {
