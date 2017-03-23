@@ -24,7 +24,6 @@ namespace AssignmentComplete
           {
               mine.productsToShip = mine.productsToShip.GetRange(0, mine.productsToShip.Count - 4);
               mine.isTruckReady = true;
-
           }
       }
       Ore CreateOreBox(Vector2 position)
@@ -79,7 +78,8 @@ namespace AssignmentComplete
     {
         if (isTruckReady)
         {
-            return new Truck(truckTexture, null, position + new Vector2(64, 32), new Vector2(2, 0));
+            isTruckReady = false;
+            return new OreContainer(oreContainer, null, position + new Vector2(64, 32), new Vector2(2, 0));
         }
         return null;
     }
@@ -109,7 +109,7 @@ namespace AssignmentComplete
         cart.Draw(spriteBatch);
       }
         
-        if(productsToShip.Count() != 3){
+        if(productsToShip.Count() != 4){
             waitingTruck.Draw(spriteBatch);
         }
       spriteBatch.Draw(mine, Position, Color.White);
@@ -193,7 +193,7 @@ namespace AssignmentComplete
         {
             if (isTruckReady)
             {
-                return new Truck(truckTexture, null, position + new Vector2(64, 32), new Vector2(2, 0));
+                return new OreContainer(truckTexture, null, position + new Vector2(64, 32), new Vector2(2, 0));
             }
             return null;
         }
