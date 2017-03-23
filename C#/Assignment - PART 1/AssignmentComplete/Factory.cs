@@ -19,12 +19,12 @@ namespace AssignmentComplete
             }
             public void Run()
             {
-                mine.ProductsToShip.Add(CreateOreBox(mine.Position + new Vector2(-80, 40 + -30 * mine.ProductsToShip.Count)));
-                if (mine.productsToShip.Count == 4)
-                {
-                    mine.productsToShip = mine.productsToShip.GetRange(0, mine.productsToShip.Count - 4);
+                if (mine.productsToShip.Count() == 2)
                     mine.isTruckReady = true;
-                }
+                if (mine.productsToShip.Count() == 3)
+                    mine.productsToShip.Clear();
+
+                mine.ProductsToShip.Add(CreateOreBox(mine.Position + new Vector2(-80, 40 + -30 * mine.ProductsToShip.Count)));
             }
             Ore CreateOreBox(Vector2 position)
             {
@@ -37,6 +37,7 @@ namespace AssignmentComplete
         Texture2D mine, oreContainer, oreBox, truckTexture;
         List<IStateMachine> processes;
         ITruck waitingTruck;
+        OreContainer OreContainer;
         bool isTruckReady = false;
         Vector2 position;
         List<IContainer> productsToShip;
@@ -61,16 +62,11 @@ namespace AssignmentComplete
 
         }
 
-        public Texture2D OreBox()
-        {
-            return this.oreBox;
-        }
-
         public ITruck GetReadyTruck()
         {
             if (isTruckReady)
             {
-                return new Truck(truckTexture, null, position + new Vector2(64, 32), new Vector2(2, 0));
+                return new Truck(truckTexture, null, position + new Vector2(76, 32), new Vector2(2, 0));
             }
             return null;
         }
@@ -79,7 +75,7 @@ namespace AssignmentComplete
             if (isTruckReady)
             {
                 isTruckReady = false;
-                return new OreContainer(oreContainer, null, position + new Vector2(64, 32), new Vector2(2, 0));
+                return new OreContainer(oreContainer, null, position + new Vector2(64, 20), new Vector2(2, 0));
             }
             return null;
         }
@@ -141,13 +137,7 @@ namespace AssignmentComplete
                 if (ikea.productsToShip.Count == 4)
                 {
                     ikea.productsToShip = ikea.productsToShip.GetRange(0, ikea.productsToShip.Count - 4);
-                    //Not setting this to zero because math is cool.
-                    /*
-                    * TODO: Initialize a new truck here I think 
-                    * ye probably
-                    * 
-                    * And second truck here :P
-                    */
+                    ikea.isTruckReady = true;
                 }
             }
 

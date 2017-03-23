@@ -25,8 +25,8 @@ namespace AssignmentComplete
             trucks = new List<ITruck>();
 
             //this.processes = new List<IStateMachine>();
-            //this.processes.Add(new Repeat(new Call(new AddTruckFromFactory(factory1, trucks))));
-            //this.processes.Add(new Repeat(new Call(new AddTruckFromFactory(factory2, trucks))));
+            this.processes.Add(new Repeat(new Call(new AddTruckFromFactory(factory1, trucks))));
+            this.processes.Add(new Repeat(new Call(new AddTruckFromFactory(factory2, trucks))));
 
 
         }
@@ -34,13 +34,11 @@ namespace AssignmentComplete
         {
             trucks.RemoveAll(truck => truck.Position.X < -50 || truck.Position.X > 1000);
             foreach (var process in processes)
-            {
                 process.Update(dt);
-            }
+
             foreach (var truck in trucks)
-            {
                 truck.Update(dt);
-            }
+
             if (factory1 != null)
                 factory1.Update(dt);
             if (factory2 != null)
@@ -80,6 +78,15 @@ namespace AssignmentComplete
                 maybe_truck.StartEngine();
                 trucks.Add(maybe_truck);
             }
+
+            var maybe_container = factory.GetReadyOreContainer();
+            if (maybe_container != null)
+            {
+                maybe_container.StartEngine();
+                trucks.Add(maybe_container);
+            }
+
+
         }
     }
 }
