@@ -19,7 +19,15 @@ namespace AssignmentComplete
       }
       public void Run()
       {
-        mine.ProductsToShip.Add(CreateOreBox(mine.Position + new Vector2(-80, 40 + -30 * mine.ProductsToShip.Count)));
+          mine.ProductsToShip.Add(CreateOreBox(mine.Position + new Vector2(-80, 40 + -30 * mine.ProductsToShip.Count)));
+          if (mine.productsToShip.Count == 4)
+          {
+              mine.productsToShip = mine.productsToShip.GetRange(0, mine.productsToShip.Count - 4); //Not setting this to zero because math is cool.
+              /*
+               * TODO: Initialize a new truck here I think 
+               * ye probably
+               */
+          }
       }
       Ore CreateOreBox(Vector2 position)
       {
@@ -49,7 +57,7 @@ namespace AssignmentComplete
 
       processes.Add(
         new Repeat(new Seq(new Timer(1.0f),
-                           new Call(new AddOreBoxToMine(this)))));
+            new Call(new AddOreBoxToMine(this)))));
 
       processes.Add(new Timer(1.0f));
 
