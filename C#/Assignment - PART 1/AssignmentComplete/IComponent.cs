@@ -6,13 +6,13 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AssignmentComplete
 {
-  public interface IDrawable
-  {
-    void Draw(SpriteBatch spriteBatch);
-  }
-  public interface IUpdateable
-  {
-    void Update(float dt);
-  }
-  public interface IComponent : IDrawable, IUpdateable { }
+    public interface IDrawable
+    {
+        void Draw(SpriteBatch spriteBatch);
+    }
+    public interface IUpdateable
+    {
+        void Update(float dt);
+    }
+    public interface IComponent : IDrawable, IUpdateable { }
 }

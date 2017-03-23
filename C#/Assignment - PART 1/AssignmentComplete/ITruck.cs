@@ -8,12 +8,12 @@ using AssignmentComplete;
 
 namespace AssignmentComplete
 {
-  public interface ITruck : IComponent
-  {
-    IContainer Container { get; }
-    Vector2 Position { get; }
-    Vector2 Velocity { get; }
-    void StartEngine();
-    void AddContainer(IContainer container);
-  }
+    public interface ITruck : IComponent
+    {
+        IContainer Container { get; }
+        Vector2 Position { get; }
+        Vector2 Velocity { get; }
+        void StartEngine();
+        void AddContainer(IContainer container);
+    }
 }

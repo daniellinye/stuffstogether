@@ -8,19 +8,19 @@ using Microsoft.Xna.Framework.Graphics;
 namespace AssignmentComplete
 {
 
-  public class Ore : IContainer
-  {
-    Texture2D texture;
-    Vector2 position = Vector2.One * -100;
-    int currentAmount;
+    public class Ore : IContainer
+    {
+        Texture2D texture;
+        Vector2 position = Vector2.One * -100;
+        int currentAmount;
         private int v;
         private Func<Texture2D> productBox;
 
         public Ore(int amount, Texture2D texture)
-    {
-      this.texture = texture;
-      AddContent(amount);
-    }
+        {
+            this.texture = texture;
+            AddContent(amount);
+        }
 
         public Ore(int v, Func<Texture2D> productBox)
         {
@@ -29,47 +29,47 @@ namespace AssignmentComplete
         }
 
         public void Draw(SpriteBatch spriteBatch)
-    {
-      spriteBatch.Draw(texture, Position, Color.White);
-    }
+        {
+            spriteBatch.Draw(texture, Position, Color.White);
+        }
 
-    public Vector2 Position
-    {
-      get
-      {
-        return position;
-      }
+        public Vector2 Position
+        {
+            get
+            {
+                return position;
+            }
 
-      set
-      {
-        position = value;
-      }
-    }
-    public int CurrentAmount
-    {
-      get
-      {
-        return currentAmount;
-      }
-    }
+            set
+            {
+                position = value;
+            }
+        }
+        public int CurrentAmount
+        {
+            get
+            {
+                return currentAmount;
+            }
+        }
 
-    public int MaxCapacity
-    {
-      get
-      {
-        return 1000;
-      }
-    }
+        public int MaxCapacity
+        {
+            get
+            {
+                return 1000;
+            }
+        }
 
-    public bool AddContent(int amount)
-    {
-      if (CurrentAmount + amount > MaxCapacity)
-      {
-        Console.WriteLine("Too many...");
-        return false;
-      }
-      currentAmount += amount;
-      return true;
+        public bool AddContent(int amount)
+        {
+            if (CurrentAmount + amount > MaxCapacity)
+            {
+                Console.WriteLine("Too many...");
+                return false;
+            }
+            currentAmount += amount;
+            return true;
+        }
     }
-  }
 }

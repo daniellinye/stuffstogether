@@ -7,11 +7,11 @@ using Microsoft.Xna.Framework;
 
 namespace AssignmentComplete
 {
-  public interface IContainer : IDrawable
-  {
-    int CurrentAmount { get; }
-    int MaxCapacity { get; }
-    bool AddContent(int amount);
-    Vector2 Position { get; set; }
-  }
+    public interface IContainer : IDrawable
+    {
+        int CurrentAmount { get; }
+        int MaxCapacity { get; }
+        bool AddContent(int amount);
+        Vector2 Position { get; set; }
+    }
 }

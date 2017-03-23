@@ -9,14 +9,12 @@ using AssignmentComplete;
 namespace AssignmentComplete
 {
 
-  public interface IFactory : IComponent
-  {
-    Vector2 Position { get; }
-    List<IContainer> ProductsToShip { get; }
-    ITruck GetReadyTruck();
-    ITruck GetReadyOreContainer();
-
-    
-  }
+    public interface IFactory : IComponent
+    {
+        Vector2 Position { get; }
+        List<IContainer> ProductsToShip { get; }
+        ITruck GetReadyTruck();
+        ITruck GetReadyOreContainer();
+    }
 }
 
