@@ -23,10 +23,7 @@ namespace AssignmentComplete
           if (mine.productsToShip.Count == 4)
           {
               mine.productsToShip = mine.productsToShip.GetRange(0, mine.productsToShip.Count - 4); //Not setting this to zero because math is cool.
-              /*
-               * TODO: Initialize a new truck here I think 
-               * ye probably
-               */
+              mine.isTruckReady = true;
           }
       }
       Ore CreateOreBox(Vector2 position)
@@ -70,8 +67,11 @@ namespace AssignmentComplete
 
     public ITruck GetReadyTruck()
     {
-      //not implemented yet
-      return null;
+        if (isTruckReady)
+        {
+            return new Truck(truckTexture, null, position, new Vector2(2, 0));
+        }
+        return null;
     }
 
     public Vector2 Position

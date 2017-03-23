@@ -9,8 +9,28 @@ namespace AssignmentComplete
 {
     class Truck : ITruck
     {
+
+        Texture2D texture;
+        public IContainer Container { get { return Container; } }
+        public Vector2 position;
+        public Vector2 Position { get { return position; } }
+        public Vector2 velocity;
+        public Vector2 Velocity { get { return velocity; } }
+
+
+
+        public Truck(Texture2D texture, IContainer container, Vector2 position, Vector2 velocity)
+        {
+            this.texture = texture;
+            IContainer Container = container;
+            this.position = position;
+            this.velocity = velocity;
+
+        }
+
         class DrawTruck : IAction
         {
+
             Mine mine;
             public DrawTruck(Mine mine)
             {
@@ -33,17 +53,6 @@ namespace AssignmentComplete
         Ore orebox;
         bool driving = false;
 
-        public Truck()
-        {
-            processes = new List<IStateMachine>();
-
-        }
-
-
-        public IContainer Container { get; set; }
-        public Vector2 Position { get; set; }
-        public Vector2 Velocity { get; set; }
-
         public void StartEngine()
         {
 
@@ -60,7 +69,7 @@ namespace AssignmentComplete
 
         public void Update(float dt)
         {
-            Position += Velocity * dt;
+            position += velocity * dt;
         }
     }
 }
