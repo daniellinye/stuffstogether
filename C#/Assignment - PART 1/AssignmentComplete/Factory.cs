@@ -102,6 +102,7 @@ namespace AssignmentComplete
             foreach (var cart in ProductsToShip)
                 cart.Draw(spriteBatch);
 
+            if (productsToShip.Count() < 3)
                 waitingTruck.Draw(spriteBatch);
             
             spriteBatch.Draw(mine, Position, Color.White);
