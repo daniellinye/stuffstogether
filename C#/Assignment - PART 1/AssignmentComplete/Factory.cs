@@ -105,7 +105,7 @@ namespace AssignmentComplete
                 cart.Draw(spriteBatch);
             }
 
-            if (productsToShip.Count() != 4)
+            if (productsToShip.Count() != 3)
             {
                 waitingTruck.Draw(spriteBatch);
             }
