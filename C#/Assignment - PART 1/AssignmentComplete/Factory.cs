@@ -64,7 +64,7 @@ namespace AssignmentComplete
         public ITruck GetReadyTruck()
         {
             if (isTruckReady)
-                return new Truck(truckTexture, null, position + new Vector2(76, 32), new Vector2(2, 0));
+                return new Truck(truckTexture, null, position + new Vector2(64, 32), new Vector2(2, 0));
             
             return null;
         }
@@ -73,7 +73,7 @@ namespace AssignmentComplete
             if (isTruckReady)
             {
                 isTruckReady = false;
-                return new OreContainer(oreContainer, null, position + new Vector2(64, 20), new Vector2(2, 0));
+                return new OreContainer(oreContainer, null, position + new Vector2(51, 20), new Vector2(2, 0));
             }
             return null;
         }
@@ -173,7 +173,7 @@ namespace AssignmentComplete
         public ITruck GetReadyTruck()
         {
             if (isTruckReady)
-                return new Truck(truckTexture, null, position + new Vector2(-76, 32), new Vector2(-2, 0));
+                return new Truck(truckTexture, null, position + new Vector2(-64, 32), new Vector2(-2, 0));
             
             return null;
         }
@@ -182,7 +182,7 @@ namespace AssignmentComplete
             if (isTruckReady)
             {
                 isTruckReady = false;
-                return new OreContainer(oreContainer, null, position + new Vector2(-88, 11), new Vector2(-2, 0));
+                return new OreContainer(oreContainer, null, position + new Vector2(-32, 11), new Vector2(-2, 0));
             }
             return null;
         }
