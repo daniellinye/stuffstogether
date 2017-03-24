@@ -49,9 +49,8 @@ namespace AssignmentComplete
             spriteBatch.Draw(background, Vector2.Zero, Color.White);
 
             foreach (var truck in trucks)
-            {
                 truck.Draw(spriteBatch);
-            }
+            
             if (factory1 != null)
                 factory1.Draw(spriteBatch);
             if (factory2 != null)
