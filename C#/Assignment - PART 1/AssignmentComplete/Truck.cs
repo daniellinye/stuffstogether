@@ -18,7 +18,6 @@ namespace AssignmentComplete
         public Vector2 Velocity { get { return velocity; } }
 
 
-
         public Truck(Texture2D texture, IContainer container, Vector2 position, Vector2 velocity)
         {
             this.texture = texture;
@@ -29,7 +28,7 @@ namespace AssignmentComplete
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, Position, Color.Magenta);
+                spriteBatch.Draw(texture, Position, Color.Magenta);
         }
 
         public void Update(float f)
@@ -66,7 +65,7 @@ namespace AssignmentComplete
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, Position, Color.Magenta);
+            spriteBatch.Draw(texture, Position, Color.White);
         }
 
         public void Update(float f)
@@ -76,6 +75,6 @@ namespace AssignmentComplete
 
         public void AddContainer(IContainer container){}
 
-        public void StartEngine(){ }
+        public void StartEngine(){}
     }
 }

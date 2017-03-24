@@ -132,7 +132,7 @@ namespace AssignmentComplete
                 if (ikea.productsToShip.Count() == 3)
                     ikea.productsToShip.Clear();
 
-                ikea.ProductsToShip.Add(CreateOreBox(ikea.Position + new Vector2(-80, 40 + -30 * ikea.ProductsToShip.Count)));
+                ikea.ProductsToShip.Add(CreateOreBox(ikea.Position - new Vector2(-80, 40 + 30 * ikea.ProductsToShip.Count)));
             }
             Ore CreateOreBox(Vector2 position)
             {
@@ -181,7 +181,7 @@ namespace AssignmentComplete
             if (isTruckReady)
             {
                 isTruckReady = false;
-                return new OreContainer(oreContainer, null, position + new Vector2(-64, 20), new Vector2(-2, 0));
+                return new OreContainer(oreContainer, null, position + new Vector2(-88, 11), new Vector2(-2, 0));
             }
             return null;
         }
