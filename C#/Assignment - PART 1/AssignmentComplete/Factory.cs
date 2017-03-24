@@ -151,10 +151,11 @@ namespace AssignmentComplete
 
         public Ikea(Vector2 position, Texture2D truck_texture, Texture2D ikea, Texture2D ore_box, Texture2D ore_container)
         {
+            
             processes = new List<IStateMachine>();
             ProductsToShip = new List<IContainer>();
             this.ikea = ikea;
-            this.truckTexture = truck_texture;
+            this.truckTexture = FlipTexture(truck_texture);
             this.oreContainer = ore_container;
             this.oreBox = ore_box;
             this.position = position;
@@ -221,6 +222,30 @@ namespace AssignmentComplete
 
         }
 
+        public Texture2D FlipTexture(Texture2D input)
+        {
+            Texture2D texture = new Texture2D(input.GraphicsDevice, input.Width, input.Height);
+            Color[] pic = new Color[input.Width * input.Height];
+            Color[] flipPic = new Color[pic.Length];
+
+            input.GetData<Color>(pic);
+
+            for (int x = 0; x < input.Width; x++)
+            {
+                for (int y = 0; y < input.Height; y++)
+                {
+                    flipPic[x + y*input.Width] = pic[input.Width - 1 - x + y*input.Width];
+                }
+
+            }
+            texture.SetData<Color>(flipPic);
+
+            return texture;
+        }
+
+
+
     }
+
 
 }
